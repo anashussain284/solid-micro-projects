@@ -1,0 +1,20 @@
+{
+    "name": "solid-micro-projects/receipt-generator",
+    "description": "SOLID micro-project demonstrating a receipt generator in PHP 8.",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Anas Hussain",
+            "email": "anashussain284@gmail.com"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^8.2"
+    }
+}
