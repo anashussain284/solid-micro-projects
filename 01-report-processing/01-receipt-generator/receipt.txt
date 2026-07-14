@@ -1,0 +1,5 @@
+{
+    "item-name": "Book",
+    "item-original-price": 10,
+    "item-discount-price": 5
+}

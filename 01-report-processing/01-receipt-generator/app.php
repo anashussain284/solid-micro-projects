@@ -2,28 +2,35 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-use App\Entities\Receipt;
-use App\Formatters\PlainTextReceiptFormatter;
-use App\Formatters\JsonTextReceiptFormatter;
+use App\Models\Receipt;
 use App\Services\ReceiptGenerator;
-use App\Output\ConsolePrinter;
 
-$receipt1 = new Receipt(
-	customerName: 'Anas',
-	amount: 100.5
+use App\Discounts\NoDiscount;
+use App\Discounts\PercentageDiscount;
+use App\Discounts\FlatDiscount;
+use App\Formatters\JsonFormatter;
+use App\Formatters\PlainTextFormatter;
+use App\Formatters\CsvFormatter;
+use App\Printers\ConsolePrinter;
+use App\Printers\FilePrinter;
+use App\Printers\BufferPrinter;
+
+$receipt1 = new Receipt("Book", 10);
+$noDiscount = new NoDiscount();
+$percentageDiscount = new PercentageDiscount(50);
+$flatDiscount = new FlatDiscount(5);
+$jsonFormatter = new JsonFormatter();
+$csvFormatter = new CsvFormatter();
+$plainTextFormatter = new PlainTextFormatter();
+$consolePrinter = new ConsolePrinter();
+$filePrinter = new FilePrinter();
+$bufferPrinter = new BufferPrinter();
+
+$generator = new ReceiptGenerator(
+	policy: $flatDiscount,
+	formatter: $csvFormatter,
+	printer: $consolePrinter,
 );
 
-$receipt2 = new Receipt(
-	customerName: 'Asna',
-	amount: 200.5
-);
+$generator->generate($receipt1);
 
-$formatter1 = new PlainTextReceiptFormatter();
-$formatter2 = new JsonTextReceiptFormatter();
-
-$printer1 = new ConsolePrinter();
-
-$receiptGenerator = new ReceiptGenerator(formatter: $formatter2, printer: $printer1);
-
-$receiptGenerator->generate($receipt1);
-$receiptGenerator->generate($receipt2);
