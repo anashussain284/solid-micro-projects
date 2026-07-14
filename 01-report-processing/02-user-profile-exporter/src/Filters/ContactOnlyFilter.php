@@ -11,8 +11,8 @@ class ContactOnlyFilter implements ProfileFilter
 	public function filter(UserProfile $profile): array
 	{
 		return [
-			'email' => $profile->getEmail(),
-			'phone' => $profile->getPhone()
+			'email' => $profile->email,
+			'phone' => $profile->phone,
 		];
 	}
 }

@@ -30,9 +30,9 @@ $csvExporter = new CsvExporter();
 $xmlExporter = new XmlExporter();
 
 $exporterService = new UserProfileExporter(
-	storage: $fileStorage,
+	storage: $consoleStorage,
 	exporter: $jsonExporter,
-	filter: $allFieldsFilter
+	filter: $publicProfileFilter
 );
 
 $exporterService->export($profile1);

@@ -11,9 +11,9 @@ class AllFieldsFilter implements ProfileFilter
 	public function filter(UserProfile $profile): array
 	{
 		return [
-			'name' => $profile->getName(),
-			'email' => $profile->getEmail(),
-			'phone' => $profile->getPhone(),
+			'name' => $profile->name,
+			'email' => $profile->email,
+			'phone' => $profile->phone,
 		];
 	}
 }
