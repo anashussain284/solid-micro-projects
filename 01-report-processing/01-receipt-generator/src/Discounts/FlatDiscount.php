@@ -5,7 +5,7 @@ namespace App\Discounts;
 
 use App\Contracts\DiscountPolicy;
 
-class FlatDiscount implements DiscountPolicy
+final readonly class FlatDiscount implements DiscountPolicy
 {
 	public function __construct(
 		private float $amount

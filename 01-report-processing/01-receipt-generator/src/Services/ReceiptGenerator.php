@@ -11,10 +11,8 @@ class ReceiptGenerator extends AbstractReceiptGenerator
     {
         $discountPrice = $this->policy->apply($receipt->getPrice());
 
-        // format
         $output = $this->formatter->format($receipt, $discountPrice);
 
-        // print
         $this->printer->print($output);
     }
 }

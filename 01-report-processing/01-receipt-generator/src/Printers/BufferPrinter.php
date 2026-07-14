@@ -12,6 +12,7 @@ class BufferPrinter implements ReceiptPrinter
 		echo "Buffering..." . PHP_EOL;
 		sleep(2);
 	}
+	
 	private string $buffer = '';
 
 	public function print(string $content): void

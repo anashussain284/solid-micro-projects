@@ -5,7 +5,7 @@ namespace App\Discounts;
 
 use App\Contracts\DiscountPolicy;
 
-class PercentageDiscount implements DiscountPolicy 
+final readonly class PercentageDiscount implements DiscountPolicy 
 {
 	public function __construct(
 		private float $percentage
