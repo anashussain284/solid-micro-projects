@@ -1,0 +1,32 @@
+user-profile-exporter/ ✅
+│
+├── app.php ✅
+├── composer.json ✅
+│
+└── src ✅
+    ├── Contracts ✅
+    │   ├── ProfileExporter.php ✅
+    │   ├── ExportStorage.php ✅
+    │   └── ProfileFilter.php ✅
+    │
+    ├── Models ✅
+    │   └── UserProfile.php ✅
+    │
+    ├── Services ✅
+    │   ├── AbstractProfileExporter.php ✅
+    │   └── UserProfileExporter.php ✅
+    │
+    ├── Exporters ✅
+    │   ├── JsonExporter.php ✅
+    │   ├── CsvExporter.php ✅
+    │   └── XmlExporter.php ✅
+    │
+    ├── Storages ✅
+    │   ├── ConsoleStorage.php ✅
+    │   ├── FileStorage.php ✅
+    │   └── MemoryStorage.php ✅
+    │
+    └── Filters ✅
+        ├── ExportAllFields.php ✅
+        ├── PublicProfileFilter.php ✅
+        └── ContactOnlyFilter.php ✅
