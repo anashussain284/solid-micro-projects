@@ -7,5 +7,5 @@ use App\Models\Invoice;
 
 interface SubtotalCalculator
 {
-	public function calculate(Invoice $invoice): float;
+	public function calculate(Invoice $invoice): int;
 }

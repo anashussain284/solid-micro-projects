@@ -5,7 +5,7 @@ namespace App\Taxes;
 
 use App\Contracts\TaxPolicy;
 
-class PercentageTaxPolicy implements TaxPolicy
+final readonly class PercentageTaxPolicy implements TaxPolicy
 {
 	public function __construct(
 		private float $percentage

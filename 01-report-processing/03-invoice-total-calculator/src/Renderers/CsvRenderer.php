@@ -5,7 +5,7 @@ namespace App\Renderers;
 
 use App\Contracts\InvoiceRenderer;
 
-class CsvRenderer implements InvoiceRenderer
+final class CsvRenderer implements InvoiceRenderer
 {
 	public function render(float $subtotal, float $total): string
 	{

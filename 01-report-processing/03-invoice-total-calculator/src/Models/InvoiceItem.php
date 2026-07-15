@@ -8,11 +8,11 @@ final readonly class InvoiceItem
 	public function __construct(
 		public string $name,
 		public int $quantity,
-		public float $price
+		public int $priceInCents
 	) {}
 
-	public function total(): float
+	public function total(): int
 	{
-		return $this->price * $this->quantity;
+		return $this->priceInCents * $this->quantity;
 	}
 }

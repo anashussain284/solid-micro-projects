@@ -19,17 +19,17 @@ use App\Services\InvoiceTotalCalculator;
 $invoiceItem1 = new InvoiceItem(
 	name: 'Book',
 	quantity: 5,
-	price: 20
+	priceInCents: 20
 );
 $invoiceItem2 = new InvoiceItem(
 	name: 'Pen',
 	quantity: 1,
-	price: 5
+	priceInCents: 5
 );
 $invoiceItem3 = new InvoiceItem(
 	name: 'Bag',
 	quantity: 1,
-	price: 500
+	priceInCents: 500
 );
 
 $invoiceItemsArray = [$invoiceItem1, $invoiceItem2, $invoiceItem3];
@@ -47,9 +47,11 @@ $plainTextRenderer = new PlainTextRenderer();
 $csvRenderer = new CsvRenderer();
 
 $invoiceTotalCalculator = new InvoiceTotalCalculator(
-	renderer: $csvRenderer,
+	renderer: $jsonRenderer,
 	calculator: $roundedSubtotalCalculator,
-	tax: $flatTaxPolicy
+	taxPolicy: $flatTaxPolicy
 );
 
-$invoiceTotalCalculator->calculate($invoice1);
+$output = $invoiceTotalCalculator->calculate($invoice1);
+
+echo $output . PHP_EOL;

@@ -6,9 +6,9 @@ namespace App\Calculators;
 use App\Contracts\SubtotalCalculator;
 use App\Models\Invoice;
 
-class RoundedSubtotalCalculator implements SubtotalCalculator
+final class RoundedSubtotalCalculator implements SubtotalCalculator
 {
-	public function calculate(Invoice $invoice): float
+	public function calculate(Invoice $invoice): int
 	{
 		$subTotal = 0;
 
@@ -16,6 +16,6 @@ class RoundedSubtotalCalculator implements SubtotalCalculator
 			$subTotal += $item->total();
 		}
 
-		return round($subTotal);
+		return $subTotal;
 	}
 }

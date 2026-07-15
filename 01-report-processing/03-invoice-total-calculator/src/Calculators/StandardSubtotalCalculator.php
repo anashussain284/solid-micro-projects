@@ -6,9 +6,9 @@ namespace App\Calculators;
 use App\Contracts\SubtotalCalculator;
 use App\Models\Invoice;
 
-class StandardSubtotalCalculator implements SubtotalCalculator
+final class StandardSubtotalCalculator implements SubtotalCalculator
 {
-	public function calculate(Invoice $invoice): float
+	public function calculate(Invoice $invoice): int
 	{
 		$subTotal = 0;
 

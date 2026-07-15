@@ -6,14 +6,14 @@ namespace App\Calculators;
 use App\Contracts\SubtotalCalculator;
 use App\Models\Invoice;
 
-class QuantitySubtotalCalculator implements SubtotalCalculator
+final class QuantitySubtotalCalculator implements SubtotalCalculator
 {
-	public function calculate(Invoice $invoice): float
+	public function calculate(Invoice $invoice): int
 	{
 		$subTotal = 0;
 
 		foreach ($invoice->items as $item) {
-			$subTotal += ($item->quantity * $item->price);
+			$subTotal += ($item->quantity * $item->priceInCents);
 		}
 
 		return $subTotal;

@@ -5,7 +5,7 @@ namespace App\Taxes;
 
 use App\Contracts\TaxPolicy;
 
-class NoTaxPolicy implements TaxPolicy
+final class NoTaxPolicy implements TaxPolicy
 {
 	public function apply(float $subtotal): float
 	{

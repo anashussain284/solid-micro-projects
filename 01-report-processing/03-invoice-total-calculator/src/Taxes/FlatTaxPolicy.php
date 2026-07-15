@@ -5,7 +5,7 @@ namespace App\Taxes;
 
 use App\Contracts\TaxPolicy;
 
-class FlatTaxPolicy implements TaxPolicy
+final readonly class FlatTaxPolicy implements TaxPolicy
 {
 	public function __construct(
 		private float $amount

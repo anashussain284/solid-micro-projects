@@ -5,7 +5,7 @@ namespace App\Renderers;
 
 use App\Contracts\InvoiceRenderer;
 
-class JsonRenderer implements InvoiceRenderer
+final class JsonRenderer implements InvoiceRenderer
 {
 	public function render(float $subtotal, float $total): string
 	{
